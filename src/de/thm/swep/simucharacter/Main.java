@@ -62,7 +62,7 @@ public class Main {
      * @param c der Charakter, der kämpfen soll
      */
     private static void _fight(Character c) {
-        System.out.printf("%s kämpft: ", c.getClass().toString());
+        System.out.printf("%s kämpft: ", c.getClass());
         c.fight();
     }
 }
