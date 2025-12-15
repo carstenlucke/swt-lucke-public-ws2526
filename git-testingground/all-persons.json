@@ -11,6 +11,10 @@
     {
       "vorname": "John",
       "nachname": "Doe"
+    },
+    {
+      "vorname": "Klaus",
+      "nachname": "Dosenkohl"
     }
   ]
 }
