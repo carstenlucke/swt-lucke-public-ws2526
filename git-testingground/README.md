@@ -27,7 +27,8 @@ In diesem Ordner können Studierende gefahrlos mit Git-Workflows üben.
    ```
 3. **Aufgabe bearbeiten**
    - Neue Datei nach Vorgabe anlegen oder `user.example.json` kopieren und anpassen.
-   - Dich selbst in `all-persons.json` ergänzen.
+   - Dich selbst in `all-persons.json` ergänzen und dort neben Vor- und Nachnamen auch den Dateinamen deiner persönlichen JSON-Datei unter `jsonfile` eintragen (siehe Beispiel unten).
+   - Fülle deine persönliche JSON-Datei mit Pflichtfeldern `vorname`, `nachname`, `email` und ergänze mindestens zwei bis drei weitere Attribute deiner Wahl, die eine kleine Geschichte erzählen (z. B. Lieblingsprojekte, Ziele, Hobbys, Fun-Facts).
 4. **Status prüfen**
    ```bash
    git status
@@ -53,3 +54,20 @@ In diesem Ordner können Studierende gefahrlos mit Git-Workflows üben.
    - In anderen IDEs ähnlich vorgehen; wichtig ist, dass `git add`, `git commit`, `git push` und `git pull` ausgeführt werden.
 
 > Tipp: Wenn `git push` aufgrund neuer Änderungen im Remote nicht funktioniert, zuerst `git pull` ausführen, Konflikte lösen und danach erneut pushen.
+
+### Beispiel-Eintrag in `all-persons.json`
+
+```json
+{
+  "vorname": "Carsten",
+  "nachname": "Lucke",
+  "jsonfile": "carstenlucke.json"
+}
+```
+
+### Inspiration für persönliche JSON-Dateien
+
+- Pflichtfelder: `vorname`, `nachname`, `email`.
+- Weitere Felder frei benennen, solange sie gültiges JSON bilden (z. B. `{"hobby": "Klettern"}`).
+- Nutze mehrere Felder oder verschachtelte Objekte, um eine kleine Geschichte zu erzählen, z. B. wie du zum Programmieren gekommen bist oder woran du gerne arbeitest.
+- Keine sensiblen Daten eintragen; wähle Inhalte, die du mit der Gruppe teilen möchtest.

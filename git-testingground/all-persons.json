@@ -13,16 +13,19 @@
       "nachname": "Doe"
     },
     {
-      "vorname": "Klaus",
-      "nachname": "Dosenkohl"
+      "vorname": "Carsten",
+      "nachname": "Lucke",
+      "jsonfile": "carstenlucke.json"
     },
     {
       "vorname": "Eva-Maria",
-      "nachname": "Maurer"
+      "nachname": "Maurer",
+      "jsonfile": "evamariamaurer.json"
     },
     {
       "vorname": "Michel",
-      "nachname": "Schneider"
+      "nachname": "Schneider",
+      "jsonfile": "michelschneider.json"
     }
     
   ]

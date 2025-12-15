@@ -1,5 +1,8 @@
 {
   "vorname": "Max",
   "nachname": "Mustermann",
-  "email": "max.mustermann@example.com"
+  "email": "max.mustermann@example.com",
+  "info1-über-mich": "Ich bin ein fiktiver Charakter",
+  "info2-über-mich": "Ich werde oft in Beispielen verwendet",
+  "anderes-beispiel": "carstenlucke.json"
 }
