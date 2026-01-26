@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Kontaktkarten - Kursverzeichnis</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <header class="app-header">
+      <div>
+        <p class="eyebrow">AI Coding Agents - Kontaktkarten</p>
+        <h1>Kontaktkarten-Webapp</h1>
+        <p class="subtitle">
+          Lokaler Demonstrator: Klick auf einen Namen, um die Detailkarte zu sehen.
+        </p>
+      </div>
+      <div class="badge">Local only</div>
+    </header>
+
+    <main class="layout">
+      <aside class="sidebar">
+        <div class="panel-header">
+          <h2>Personen</h2>
+          <span id="listStatus" class="status"></span>
+        </div>
+        <div class="controls">
+          <label class="field">
+            <span class="field-label">Suche</span>
+            <input
+              id="searchInput"
+              type="search"
+              placeholder="Name eingeben ..."
+              autocomplete="off"
+            />
+          </label>
+          <div class="nav-buttons">
+            <button id="prevBtn" type="button">Zurueck</button>
+            <button id="nextBtn" type="button">Weiter</button>
+          </div>
+        </div>
+        <ul id="personList" class="person-list" aria-live="polite"></ul>
+        <p id="error" class="error" role="alert" hidden></p>
+      </aside>
+
+      <section class="detail">
+        <div id="card" class="card">
+          <p class="placeholder">Bitte links eine Person auswaehlen.</p>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
