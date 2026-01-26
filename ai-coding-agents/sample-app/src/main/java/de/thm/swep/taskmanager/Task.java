@@ -20,8 +20,12 @@ public class Task {
      * @param id Die eindeutige ID der Aufgabe
      * @param title Der Titel der Aufgabe (Pflichtfeld)
      * @param description Die Beschreibung der Aufgabe (optional)
+     * @throws IllegalArgumentException wenn der Titel null oder leer ist
      */
     public Task(int id, String title, String description) {
+        if (title == null || title.trim().isEmpty()) {
+            throw new IllegalArgumentException("Titel darf nicht leer sein");
+        }
         this.id = id;
         this.title = title;
         this.description = description;

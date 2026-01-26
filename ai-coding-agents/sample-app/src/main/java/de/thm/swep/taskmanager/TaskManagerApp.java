@@ -10,12 +10,10 @@ import java.util.Scanner;
  */
 public class TaskManagerApp {
     private final TaskManager taskManager;
-    private final Scanner scanner;
     private boolean running;
 
     public TaskManagerApp() {
         this.taskManager = new TaskManager();
-        this.scanner = new Scanner(System.in);
         this.running = true;
     }
 
@@ -34,13 +32,14 @@ public class TaskManagerApp {
         System.out.println("=== Task Management System ===");
         System.out.println("Willkommen!\n");
 
-        while (running) {
-            showMenu();
-            int choice = readChoice();
-            handleChoice(choice);
+        try (Scanner scanner = new Scanner(System.in)) {
+            while (running) {
+                showMenu();
+                int choice = readChoice(scanner);
+                handleChoice(choice, scanner);
+            }
         }
 
-        scanner.close();
         System.out.println("Auf Wiedersehen!");
     }
 
@@ -60,9 +59,10 @@ public class TaskManagerApp {
     /**
      * Liest die Benutzereingabe für die Menüauswahl.
      * 
+     * @param scanner Der Scanner für die Eingabe
      * @return Die gewählte Option oder -1 bei ungültiger Eingabe
      */
-    private int readChoice() {
+    private int readChoice(Scanner scanner) {
         try {
             String input = scanner.nextLine();
             return Integer.parseInt(input);
@@ -75,21 +75,22 @@ public class TaskManagerApp {
      * Verarbeitet die Menüauswahl des Benutzers.
      * 
      * @param choice Die gewählte Menüoption
+     * @param scanner Der Scanner für die Eingabe
      */
-    private void handleChoice(int choice) {
+    private void handleChoice(int choice, Scanner scanner) {
         System.out.println();
         switch (choice) {
             case 1:
-                createNewTask();
+                createNewTask(scanner);
                 break;
             case 2:
                 showAllTasks();
                 break;
             case 3:
-                markTaskAsCompleted();
+                markTaskAsCompleted(scanner);
                 break;
             case 4:
-                deleteTask();
+                deleteTask(scanner);
                 break;
             case 5:
                 running = false;
@@ -101,8 +102,10 @@ public class TaskManagerApp {
 
     /**
      * Erstellt eine neue Aufgabe basierend auf Benutzereingaben.
+     * 
+     * @param scanner Der Scanner für die Eingabe
      */
-    private void createNewTask() {
+    private void createNewTask(Scanner scanner) {
         System.out.print("Titel: ");
         String title = scanner.nextLine().trim();
 
@@ -138,8 +141,10 @@ public class TaskManagerApp {
 
     /**
      * Markiert eine Aufgabe als erledigt.
+     * 
+     * @param scanner Der Scanner für die Eingabe
      */
-    private void markTaskAsCompleted() {
+    private void markTaskAsCompleted(Scanner scanner) {
         System.out.print("ID der zu erledigenden Aufgabe: ");
         try {
             int id = Integer.parseInt(scanner.nextLine());
@@ -155,8 +160,10 @@ public class TaskManagerApp {
 
     /**
      * Löscht eine Aufgabe.
+     * 
+     * @param scanner Der Scanner für die Eingabe
      */
-    private void deleteTask() {
+    private void deleteTask(Scanner scanner) {
         System.out.print("ID der zu löschenden Aufgabe: ");
         try {
             int id = Integer.parseInt(scanner.nextLine());
